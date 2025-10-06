@@ -78,5 +78,18 @@ app.post('/messages/save', async (req, res) => {
   }
 })
 
+app.get('/api/About', (req, res) => {
+  res.json({
+    name: 'Mandy Mao',
+    photoUrl: '/me.jpg',
+    paragraphs: [
+      "Hi! I’m Mandy, a senior majoring computer science and minoring in business studies. I love building end-to-end systems that blend solid engineering with real-world impact.", 
+      "Recently I’ve been doing research at NYU’s GRAIL Lab on robot manipulation and 3D perception—collecting thousands of demos, evaluating zero-shot policies across diverse environments and gripper calibration.",
+      "I like to play badminton and swim during my spare time. I also love playing piano and listening to different kinds of music."
+    ],
+    updatedAt: new Date().toISOString()
+  });
+});
+
 // export the express app we created to make it available to other modules
 module.exports = app // CommonJS export style!
